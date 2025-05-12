@@ -75,8 +75,7 @@ sudo apt update && sudo apt full-upgrade -y
 
 <details>
 	<summary markdown="span">Réponse :</summary>
-	<code>apt update</code> : met à jour la liste des paquets disponibles à partir des dépôts configurés dans /etc/apt/sources.list. 
-
+	<code>apt update</code> : met à jour la liste des paquets disponibles à partir des dépôts configurés dans /etc/apt/sources.list.   
 	<code>apt full-upgrade</code> : Met à jour tous les paquets installés en tenant compte des changements de dépendances, même si cela nécessite de supprimer des paquets. Bref, ça installe les mise à jour des paquets. Ça peut supprimer ou remplacer des paquets pour satisfaire de nouvelles dépendances. Par contre, `apt upgrade` met à jour sans jamais supprimer de paquets.  
 </details>
 

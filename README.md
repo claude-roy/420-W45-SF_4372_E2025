@@ -12,7 +12,7 @@ Ce calendrier est donné à titre indicatif et peut être modifié en fonction d
 | ||Exercice 1 : Installation Ubuntu |[Ex1](Exercices/)| mai|
 |2|	 mai|Installation d'un serveur Linux avec LVM et configuration réseau	 |[Ex2](Exercices/Exercice02_InstallationServeur.md) et [Ex3](Exercices/)| mai|
 |3|  mai|Accès distant, les protocoles SSH/SCP et Git accès distant |Ex4| mai|
-|4|	 mai|Admin système les droits et accès |Ex5|26 nov.|
+|4|	 mai|Admin système les droits et accès |Ex5| mai|
 |5|	 mai|Admin système Noyau, processus et logs |Ex6| mai|
 |6|	 mai|**Travail pratique 1 : Installation d'un serveur** |**Tp1**| mai|
 |7|	 mai|Docker	 |Ex7| mai|

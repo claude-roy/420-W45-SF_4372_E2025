@@ -27,7 +27,7 @@ Dans cette partie, vous allez installer un serveur Ubuntu selon les spécificati
 
 a - En utilisant l’ISO ubuntu-24.04-desktop-amd64.iso, créez une machine virtuelle selon les spécifications suivantes :  
 
-    Dossier dans vSphere : DFC DS/VM DFC/E25\_4372_420W45_ISS_CR/  
+    Dossier dans vSphere : DFC DS/VM DFC/E25_4372_420W45_ISS_CR/  
     Nom de la VM : E25_4372_Ub_Cli_Initiale_#Matricule   
     Storage (disque vSphere) : ESXDFC2  
     CPU : 2  
@@ -76,7 +76,7 @@ sudo apt update && sudo apt full-upgrade -y
 <details>
 	<summary markdown="span">Réponse :</summary>
 	`apt update` : met à jour la liste des paquets disponibles à partir des dépôts configurés dans /etc/apt/sources.list.  
-	`apt full-upgrade` : Met à jour tous les paquets installés en tenant compte des changements de dépendances, même si cela nécessite de supprimer des paquets. Bref, ça installe les mise à jour des paquets. Ça peut supprimer ou remplacer des paquets pour satisfaire de nouvelles dépendances. Par contre, `apt upgrade` met à jour sans jamais supprimer de paquets.  
+	<code>apt full-upgrade</code> : Met à jour tous les paquets installés en tenant compte des changements de dépendances, même si cela nécessite de supprimer des paquets. Bref, ça installe les mise à jour des paquets. Ça peut supprimer ou remplacer des paquets pour satisfaire de nouvelles dépendances. Par contre, `apt upgrade` met à jour sans jamais supprimer de paquets.  
 </details>
 
 ### Installer les VM tools

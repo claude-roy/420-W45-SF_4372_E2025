@@ -67,7 +67,7 @@ b -	Une fois la VM créée, lancez la VM et installez le serveur Ubuntu selon le
 
             Confirmer l'action même s’il est en rouge.
 
-    - Configuration profil :
+	- Configuration profil :
         
         Attention pour le nom d'utilisateur et mot de passe je vous recommande d'utiliser le même que votre compte principal sur votre client.
 
@@ -75,14 +75,12 @@ b -	Une fois la VM créée, lancez la VM et installez le serveur Ubuntu selon le
         Le nom de la machine : srv-web-[matricule]
         Nom d'utilisateur : a votre choix.
         Mot de passe : a votre choix.
+	
+	- Configuration SHH : Cochez Installer le serveur OpenSSH (cliquez sur la barre d'espace). N'importez pas la clé SSH.  
 
-   - Configuration SHH : Cochez Installer le serveur OpenSSH 
-      (cliquez sur la barre d'espace)
-        N'importez pas la clé SSH.  
+	-  Featured Server Snaps ne cocher rien et cliqué sur Terminé
 
-    -  Featured Server Snaps ne cocher rien et cliqué sur Terminé
-
-    - Patientez! L'INSTALLATION EST EN COURS.
+	- Patientez! L'INSTALLATION EST EN COURS.
  
  
 Une fenêtre vous proposant de redémarrer des services s'affichera. Laissez les services déjà cochés et continuez. Enfin, redémarrez votre serveur&nbsp;:

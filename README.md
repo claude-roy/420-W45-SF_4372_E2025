@@ -8,7 +8,7 @@ Ce calendrier est donné à titre indicatif et peut être modifié en fonction d
 |Cours	|Date cours |Contenu|Exercices <br> Évaluations|  Remise exercice   |
 |----------:|:-------------:|----------------|:------:|------:|
 |1|	20 mai|Présentation du plan de cours <br> Présentation des concepts de bases <br> Exercice 1 : Installation Ubuntu|[Ex1](Exercices/Exercice01_InstallationClient.md)|26 mai|
-|2|	26 mai|Installation d'un serveur Linux avec LVM et configuration réseau	 |[Ex2](Exercices/Exercice02_InstallationServeur.md) et [Ex3](Exercices/)||
+|2|	26 mai|Installation d'un serveur Linux avec LVM et configuration réseau	 |[Ex2](Exercices/Exercice02_InstallationServeur.md) et [Ex3](Exercices/Exercice03_GestionLVM.md)||
 |3| 2 juin |Accès distant, les protocoles SSH/SCP et Git accès distant |Ex4||
 |4| 3 juin |Admin système les droits et accès |Ex5||
 |5|	 9 juin |Admin système Noyau, processus et logs |Ex6||

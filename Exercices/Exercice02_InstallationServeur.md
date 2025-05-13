@@ -3,9 +3,9 @@
 ### Informations
 - Évaluation : formative
 - Type de travail : individuel
-- Durée : 1 heures
+- Durée : 1 heure
 - Système d'exploitation : Linux Ubuntu serveur 24.04 ou plus récent.
-- Environnement : virtuel, vsphere.
+- Environnement : virtuel, vSphere.
 
 ### Objectifs :
 
@@ -42,8 +42,8 @@ Dans cette partie, vous allez installer un serveur Ubuntu selon les spécificati
 
 a - En utilisant l’ISO ubuntu-24.04-live-server-amd64.iso, créez une machine virtuelle selon les spécifications suivantes :
 
-    Dossier dans vSphere : DFC DS/VM DFC/A24_4364_420W45_IIS_JPD/
-    Nom de la VM : A24_4364_420W45_Ub_srv_[Initiale]_[Matricule]
+    Dossier dans vSphere : DFC DS/VM DFC/E25_4372_420W45_ISS_CR  
+    Nom de la VM : E25_4372_420W45_Ub_srv_[Initiale]_[Matricule]
     CPU : 2
     Mémoires : 2 Go
     Disque dur : 2 disques, 20 Go chacun en partitionnement dynamique 
@@ -53,40 +53,38 @@ a - En utilisant l’ISO ubuntu-24.04-live-server-amd64.iso, créez une machine 
 
 b -	Une fois la VM créée, lancez la VM et installez le serveur Ubuntu selon les spécifications suivantes :
     
-    Pour vous déplacer dans les fenêtres, utiliser votre touche tabulation. Pour sélectionner un item, appuyez sur la touche Entrée(enter). Pour cocher un item cliqué sur la barre d'espacement.
+Pour vous déplacer dans les fenêtres, utiliser votre touche tabulation. Pour sélectionner un item, appuyez sur la touche Entrée(enter). Pour cocher un item cliqué sur la barre d'espacement.
 
     - Clavier : French (Canada) ou English (US)
     - Type d’installation : Ubuntu Server
     - Connexions réseau : DHCPv4
     - Configurer le proxy : Laissez vide et appuyer Terminé.
     - Miroir d'archive Ubuntu : ne rien changer et appuyer sur Terminé.
-
     - Configuration de stockage guidée :
         Utiliser un disque entier
              Laissé Set up this disk as an LMV group
-
-            Confirmer l'action même s’il est en rouge.
+             Confirmer l'action (Continue) même s’il est en rouge.
 
 	- Configuration profil :
-        
         Attention pour le nom d'utilisateur et mot de passe je vous recommande d'utiliser le même que votre compte principal sur votre client.
-
         Votre nom : ;-)
         Le nom de la machine : srv-web-[matricule]
         Nom d'utilisateur : a votre choix.
         Mot de passe : a votre choix.
-	
+
+	- Ne pas configurer pour Ubuntu Pro.	
 	- Configuration SHH : Cochez Installer le serveur OpenSSH (cliquez sur la barre d'espace). N'importez pas la clé SSH.  
-
 	-  Featured Server Snaps ne cocher rien et cliqué sur Terminé
-
 	- Patientez! L'INSTALLATION EST EN COURS.
  
  
-Une fenêtre vous proposant de redémarrer des services s'affichera. Laissez les services déjà cochés et continuez. Enfin, redémarrez votre serveur&nbsp;:
+Si une fenêtre vous proposant de redémarrer des services s'affiche, laissez les services déjà cochés et continuez. Enfin, redémarrez votre serveur&nbsp;:
+
 ```
-reboot
+Reboot Now
 ```
+
+**Attention** : n'oubliez pas de détacher l'ISO du CD/DVD.  
 
 ## Partie 2 : Première utilisation de votre machine
 
@@ -116,7 +114,7 @@ Ici il y a deux partitions qui nous intéressent davantage :
 
 ```bash
 # La partition LVM probablement : 
-/dev/mapper/vgubuntu-root
+/dev/mapper/ubuntu--vg-ubuntu--lv
 # La partition de boot/efi probablement :
 /dev/sda2
 ```
@@ -155,7 +153,7 @@ Pour quitter top tapez q.
 
 ## Partie 3 : Ajout de services et configurations
 
-Dans cette partie, vous allez ajouter les logiciels wget, curl, git, Visual Studio Code et Docker et faire quelques configurations supplémentaires.
+Dans cette partie, vous allez ajouter les logiciels wget, curl, git et Docker et faire quelques configurations supplémentaires.
 
 
 ### Étape 2 : Ajout de logiciels de base
@@ -185,7 +183,8 @@ Vous devez relancer votre session  pour que votre utilisateur soit inclus dans l
 ```bash
 # Les informations à l'ouverture de la session 
 git version
-docker --version
+docker version
+docker compose version
 ```
 
 ## Compétences développées

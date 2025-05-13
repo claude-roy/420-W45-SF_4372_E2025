@@ -78,7 +78,7 @@ Pour vous déplacer dans les fenêtres, utiliser votre touche tabulation. Pour s
 	- Patientez! L'INSTALLATION EST EN COURS.
  
  
-Si une fenêtre vous proposant de redémarrer des services s'affiche, laissez les services déjà cochés et continuez. Enfin, redémarrez votre serveur&nbsp;:
+Si une fenêtre vous propose de redémarrer des services s'affiche, laissez les services déjà cochés et continuez. Enfin, redémarrez votre serveur&nbsp;:
 
 ```
 Reboot Now

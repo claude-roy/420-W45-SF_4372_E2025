@@ -102,7 +102,7 @@ sudo apt update && sudo apt upgrade -y
 
 ### Vérification des partitions et du système
 
-- Tapez la commande suivante :
+- Entrez la commande suivante :
 
 ```
 df -h
@@ -126,13 +126,13 @@ Remarquer les valeurs d'utilisation.
 
 Un périphérique de bloc est un fichier faisant référence à un périphérique. Les périphériques peuvent être des disques durs, des disques SDD, des disques RAM, etc. Les fichiers de périphérique de bloc se trouvent dans le répertoire /dev.
 
--  Taper la commande suivante, et avec la page man vérifier les informations données sur la commande.
+-  Entrez la commande suivante, et avec la page man vérifier les informations données sur la commande.
 
 ```bash
 lsblk
 # sda, ce sont les données sur votre premier disque dur.
 
-#sdb, ce sont les données sur votre deuxième disque dur non utilisé. Nous allons le configurer dans un autre exercice.
+# sdb, ce sont les données sur votre deuxième disque dur non utilisé. Nous allons le configurer dans un autre exercice.
 ```
 
 ![Lsblk](../images/lsblk.jpg)
@@ -141,7 +141,7 @@ lsblk
 
 ### Mémoire RAM, processeur et processus
 
-Dans un terminal, taper la commande top
+Entrez la commande top
 
 ```
 top 
@@ -149,7 +149,7 @@ top
 
 **Remise** : Prenez en note la valeur importante pour votre remise.
 
-Pour quitter top tapez q.
+Pour quitter top entrer q.
 
 ## Partie 3 : Ajout de services et configurations
 

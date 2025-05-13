@@ -16,7 +16,7 @@ Cet exercice a pour objectifs :
 Dans cet exercice, vous allez vous installer un environnement de travail pour la majorité des exercices et des travaux pratiques du cours. Vous allez utiliser un client Linux Ubuntu, mais comme nous allons installer des logiciels serveur, il va faire également office de serveur.  
 
 > **Attention :** ne tapez pas les commandes dans le terminal de votre VM sans comprendre ce que vous faites !  
-> Utilisez les page man pour comprendre les commandes et les options. De plus, le copier/coller des commandes dans le terminal est une mauvaise idée.  
+> Utilisez les pages man pour comprendre les commandes et les options. De plus, le copier/coller des commandes dans le terminal est une mauvaise idée.  
 
 ## Partie 1 : Installation d’Ubuntu 
 Dans cette partie, vous allez installer un serveur Ubuntu selon les spécifications données.  
@@ -63,7 +63,7 @@ Si vous ne l'avez pas encore fait, lors de l'installation, faites une mise à jo
 sudo apt update && sudo apt full-upgrade -y  
 ```
 
-**Question** : Quel est l'utilité des deux perluettes (&&) ?
+**Question** : Quelle est l'utilité des deux perluètes (&&) ?
 
 <details>
 	<summary markdown="span">Réponse :</summary>
@@ -71,7 +71,7 @@ sudo apt update && sudo apt full-upgrade -y
 	
 </details>
 
-**Question** : Qu'elle est la différence entre ces deux commandes ?  
+**Question** : Quelle est la différence entre ces deux commandes ?  
 
 <details>
 	<summary markdown="span">Réponse :</summary>
@@ -120,7 +120,7 @@ ls -al .ssh
 cat .ssh/id_ed25519.pub
 ```
 
-L’autre fichier, id\_ed25519.pub est la clé publique, elle doit être envoyée sur votre serveur distant. Par exemple, dans votre profil GitHub dans Setting -> SSH and GPG Keys -> New SSH Key. Dans ce cas vous faite une copie du contenu id\_ed25519.pub et vous le coller dans l'espace dans le champ prévu à cet effet  (key) et donnez un nom significatif à votre clé dans Title:
+Le fichier id\_ed25519.pub est la clé publique, elle doit être copiée sur votre serveur distant. Par exemple, dans votre profil GitHub dans Setting -> SSH and GPG Keys -> New SSH Key. Dans ce cas, vous faites une copie du contenu id\_ed25519.pub et vous le collez dans l'espace dans le champ prévu à cet effet (key) et donnez un nom significatif à votre clé dans Title:
 
 ![Git Hub SSH](../images/GitHubSSH.jpg)
 
@@ -134,7 +134,7 @@ Par la suite, vous pourrez vous connecter avec le mode ssh à tous vos dépôts 
 df -h
 ```
 
-**Question** : À quoi sert la commande df et son paramètre -h ?
+**Question** : À quoi servent la commande <code>df</code> et son paramètre -h ?
 
 Utiliser la page man pour répondre
 
@@ -150,7 +150,7 @@ Ici il y a deux partitions qui nous intéressent davantage :
 
 ```bash
 # La partition LVM probablement : 
-/dev/mapper/vgubuntu-root
+/dev/mapper/ubuntu--vg-ubuntu--lv
 # La partition de boot/efi probablement :
 /dev/sda2
 ```
@@ -170,9 +170,10 @@ lsblk
 
 #sdb, ce sont les données sur votre deuxième disque dur non utilisé. Nous allons le configurer dans un autre exercice.
 ```
+
 ![Lsblk](../images/lsblk.jpg)
 
-Il est également possible d’avoir des informations en mode graphique. Pour ce faire, utiliser l’outil disk. 
+Il est également possible d’avoir des informations en mode graphique. Pour ce faire, utiliser l’utilitaire Disques (Disks). 
 
 — Cliquez sur chaque partition pour pouvoir accéder aux informations. Vérifier les points de montage.
 
@@ -204,10 +205,10 @@ a- Nous allons installer les outils de base wget, curl et git. Pour ceux qui le 
 sudo apt install wget curl git vim -y
 ```
 
-b. Installer Visual Studio Code : https://code.visualstudio.com/
-suivez les instruction pour Linux Ubuntu.
+b. Installez Visual Studio Code (https://code.visualstudio.com/) ou VSCodium (https://vscodium.com) et suivez les instructions pour Linux Ubuntu.
 
-### Étape 3: Ajout de Docker
+### Étape 3: Ajout de Docker  
+
 a.	Il existe plusieurs manières d’installer Docker. Nous allons utiliser le script officiel de Docker pour l’installer (vous pouvez consulter le script à https://get.docker.com).
 
 ```bash
@@ -223,26 +224,30 @@ Vous devez relancer votre session pour que votre utilisateur soit inclus dans le
 
 b.	Plusieurs des exercices se feront sous Docker. Vous pouvez également installer Docker sous votre Windows ou Mac.
 
-Docker sous Windows : https://docs.docker.com/desktop/install/windows-install/.  
-Docker sous MAC : https://docs.docker.com/desktop/install/mac-install/.
+Docker sous Windows : [https://docs.docker.com/desktop/install/windows-install/](https://docs.docker.com/desktop/install/windows-install/).  
+Docker sous MAC : [https://docs.docker.com/desktop/install/mac-install/](https://docs.docker.com/desktop/install/mac-install/).
 
 
 ### Étape 4 : Configuration supplémentaire
 
 Nous allons faire une configuration supplémentaire, on va installer le shell zshell, un shell plus fonctionnel que le bash.
 
-a. Vérifier les shell présent sur votre Ubuntu :
+a. Vérifier les shell présents sur votre Ubuntu :  
+
 ```bash
 echo $SHELL
 cat /etc/shells #vous donne les shell existant sur votre poste
 ```
 	
 b. Si zsh n'est pas listé, installer le.
+
 ```bash
 sudo apt install zsh -y
 
-```
+```  
+
 c. Vérifier la présence du shell.
+
 ```bash
 zsh --version
 ```
@@ -258,7 +263,7 @@ Pour voir le changement, vous devez ouvrir une nouvelle fenêtre de commandes. �
 
 [![Image](../images/zsh1.png)]
 
-c.	Pour pouvoir personnaliser l’apparence vous devez installer oh-my-zsh.
+c.	Pour pouvoir personnaliser l’apparence, vous devez installer oh-my-zsh.
 
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -269,7 +274,7 @@ La configuration de oh-my-zsh se fait par le fichier $HOME/.zshrc et les fichier
 d.	Un thème intéressant que je recommande est Powerlevel10k. Vous devez installer les polices du thème avant d’installer le thème.
 
 ```bash
-cd $HOME/Downloads
+cd $HOME/Downloads # Téléchargements en français
 
 wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
 
@@ -286,6 +291,7 @@ Pour installer les polices, vous ouvrez le répertoire (dossier) Downloads et vo
 Voici les commandes pour installer le thème.
 
 ```bash
+cd  
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
 ```
@@ -326,7 +332,7 @@ docker compose version
 Note : les compétences sont développées en partie.
 
 ## Références
-- Ubuntu : https://ubuntu.com/download/desktop
-- LVM : https://access.redhat.com/documentation/fr-fr/red_hat_enterprise_linux/6/html/logical_volume_manager_administration/index
-- zsh : https://kifarunix.com/install-and-setup-zsh-and-oh-my-zsh-on-ubuntu-20-04/
-- Powerlevel10k : https://github.com/romkatv/powerlevel10k
+- Ubuntu : [https://ubuntu.com/download/desktop](https://ubuntu.com/download/desktop)
+- LVM : [https://access.redhat.com/documentation/fr-fr/red_hat_enterprise_linux/6/html/logical_volume_manager_administration/index](https://access.redhat.com/documentation/fr-fr/red_hat_enterprise_linux/6/html/logical_volume_manager_administration/index)
+- zsh : [https://kifarunix.com/install-and-setup-zsh-and-oh-my-zsh-on-ubuntu-20-04/](https://kifarunix.com/install-and-setup-zsh-and-oh-my-zsh-on-ubuntu-20-04/)
+- Powerlevel10k : [https://github.com/romkatv/powerlevel10k](https://github.com/romkatv/powerlevel10k)

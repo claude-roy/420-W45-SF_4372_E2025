@@ -102,7 +102,7 @@ sudo apt update && sudo apt upgrade -y
 
 ### Vérification des partitions et du système
 
-- Ouvrez un terminal et tapez les commandes demandées :
+- Tapez la commande suivante :
 
 ```
 df -h

@@ -23,8 +23,7 @@ Vous devez remettre un document Word contenant les vérifications demandées.
 
 ## Section 1 Prise en main de votre serveur
 
-Quand vous vous connectez à votre serveur, certaines [informations](../images/Connexion.png) importantes vous sont fournies. L'adresse IP est l'une de plus importante. Notez là.
-
+Quand vous vous connectez à votre serveur, certaines [informations](../images/Connexion.png) importantes vous sont fournies. L'adresse IP est l'une des plus importante. Notez là.
 
 Lors de l'installation, vous avez coché oui à l'installation d'un serveur SSH.  
 
@@ -67,22 +66,30 @@ Source : Les citations sur SSH proviennent de : Formation Debian GNU/Linux ECP, 
 
 Utilisez votre machine Ubuntu client (poste de développeur) pour établir une connexion avec votre serveur.
 
-- Dans un terminal sur le poste client entrer la commande :
+L'utilisation de la commande SSH est la suivante :  
 
 ```bash
-$ssh username@ip_serveur [-p port]
+ssh username@ip_serveur [-p port]
 ```
 
-- Remarquez l'échange de la clé lors de la première connexion.
+Si le nom d'utilisateur est le même sur le serveur et sur le poste client, il peut être omis. Si le serveur utilise le port standard, 22, vous n'avez pas à spécifier le port.  
+
+- Dans un terminal sur le poste client utiliser la commande suivante pour vous connecter à votre serveur :  
+
+```bash
+ssh username@ip_serveur
+```
+
+- Remarquez l'échange de la clé lors de la première connexion (la demande d'accepter la clé du serveur).
 - Vérifier par quelques commandes que vous êtes bien sur le serveur : 
 
 ```bash
-$uname
-$hostnamectl
-$ip a
-$ss -tunap # Vous devriez voir votre connexion SSH.
-$df
-$pwd
+uname
+hostnamectl
+ip -4 a
+ss -tunap # Vous devriez voir votre connexion SSH.
+df
+pwd
 ```
 
 - Entrer les mêmes commandes dans un autre terminal, mais cette fois pour votre poste client. 
@@ -95,9 +102,7 @@ L’instruction **apt update** va rechercher les mises à jour disponibles pour 
 
 L’option **apt upgrade** installe les mises à jour identifiées avec apt update sans supprimer les paquets installés. S’il y a de nouvelles dépendances à installer, les paquets peuvent être installés ou non selon le type de commande utilisée apt, apt-get ou aptitude.
 
-Les options **apt dist-upgrade** ou **full-upgrade** sont identiques, utiliser l’une ou l’autre revient donc au même.
-
-Ces deux options agissent plus « intelligemment » que la fonction upgrade. En plus de mettre à jour les paquets existants, elles vont également être en mesure de gérer les dépendances. Si de nouveaux paquets doivent être installés pour satisfaire des dépendances, ils le seront. Ceux qui ne sont plus utiles, sont supprimés et les paquets essentiels ou requis, sont installés. Les paquets les plus importants sont traités en priorité.
+L'options **full-upgrade**  agis plus « intelligemment » que la fonction upgrade. En plus de mettre à jour les paquets existants, elle va également être en mesure de gérer les dépendances. Si de nouveaux paquets doivent être installés pour satisfaire des dépendances, ils le seront. Ceux qui ne sont plus utiles, sont supprimés et les paquets essentiels ou requis, sont installés. Les paquets les plus importants sont traités en priorité.
 
 **Dois-je utiliser apt upgrade ou apt full-upgrade?**
 
@@ -106,21 +111,22 @@ Dans un environnement hautement critique et qui doit rester stable, la commande 
 Dans la plupart des autres cas, l’option dist-upgrade ou full-upgrade est à privilégier, car vous obtiendrez toutes les dernières mises à jour sur votre système et du noyau. Lorsque vous souhaitez changer de version majeure de distribution (par exemple pour passer de Debian 8 à Debian 9), c’est cette commande que vous devez utiliser.
 
 Dans tous les cas, je vous conseille vivement de réaliser une sauvegarde avant toute mise à jour et de réaliser des essais au préalable sur un environnement de test.
+</blockquote>  
 
-Source : [https://www.lecoindunet.com/difference-apt-update-upgrade-full-upgrade](https://www.lecoindunet.com/difference-apt-update-upgrade-full-upgrade) </blockquote>
+Source : [https://www.lecoindunet.com/difference-apt-update-upgrade-full-upgrade](https://www.lecoindunet.com/difference-apt-update-upgrade-full-upgrade)
 
 - Entrez les commandes suivantes sur votre serveur : 
 
 ```bash
-$sudo apt update
-$sudo apt upgrade -y
+sudo apt update
+sudo apt upgrade -y
 ```
 
 - Entrez les commandes suivantes sur poste client : 
 
 ```bash
-$sudo apt update
-$sudo apt full-upgrade -y
+sudo apt update
+sudo apt full-upgrade -y
 ```
 
 ### Vérifier les logs du serveur
@@ -129,7 +135,7 @@ $sudo apt full-upgrade -y
 
 
 ```bash
-$tail /var/log/auth.log
+tail /var/log/auth.log
 ```
 
 #### Vérifier des droits sur des fichiers et des répertoires
@@ -139,7 +145,7 @@ Pour comprendre les droits : [https://doc.ubuntu-fr.org/droits](https://doc.ubun
 - Vérifier les droits sur le fichier des logs :
 
 ```bash
-$ls -l /var/log/auth.log
+ls -l /var/log/auth.log
 ```
 
 - Garder les informations pour la comparer plus tard. Notez les droits de cette façon :
@@ -162,21 +168,27 @@ $ls -l /var/log/auth.log
 
 
 ```bash
-$ls -l /etc/passwd
-$ls -l /etc/shadow
-$ls -l /home # Regarder votre utilisateur.
+ls -l /etc/passwd
+sudo ls -l /etc/shadow
+ls -l /home # Regarder votre utilisateur.
 ```
 
 Vous pouvez visualiser un exemple de résultats [ici](../images/droit.png).
 
 **Question** : Selon-vous, pourquoi seule root et le groupe shadow ont le droit lecture sur <code>/etc/shadow</code> et que tout le monde peut lire <code>/etc/passwd</code> ?
 
+<details>
+	<summary markdown="span">Réponse :</summary>
+	De nombreux programmes utilisent le fichier <code>/etc/passwd</code> : permet d'associer les UID aux noms d'utilisateurs et permet également de vérifier les droits ou l’appartenance à un groupe.
+	Le fichier <code>/etc/shadow</code> contient les hash des mots de passe, donc nécessite plus de restrictions.
+</details>
+
 ## Pour vérification
 
 Remettre un document Word contenant les captures d’écran de la commande suivante pour les deux VMS.
 
 ```bash
-$ls -l /var/log/auth.log
+ls -l /var/log/auth.log
 ```
 
 
@@ -197,7 +209,7 @@ Exemple de capture acceptable serveur:
 
 - Connectez-vous votre station de travail Ubuntu.
 - Prenez la clé publique générée lors de l'exercice 1 et publiez-la sur votre compte GitHub. Bien sûr, si vous n'avez pas de compte créez-en un. Vous pouvez vous aider du livre Pro Git page 163. Ce livre est  disponible sur Léa.
-- Rendez-vous sur mon dépôt à l'adresse [https://github.com/jpduchesneauCegep/test_ste_foy_ISS](https://github.com/jpduchesneauCegep/test_ste_foy_ISS)
+- Rendez-vous sur mon dépôt à l'adresse [https://github.com/claude-roy/test_ste-foy](https://github.com/claude-roy/test_ste-foy)
 - Faite un Fork de mon dépôt. Voir dans le coin droit cet outil :
 ![fork](../images/fork.jpg)
 
@@ -223,11 +235,11 @@ Votre clé SSH pourra être utilisée toute la session entre votre poste client 
 
 ### Création d'un fichier de configuration personnel pour SSH
 
-Lorsque vous installez SSH, un répertoire ~/.ssh est créé automatiquement. Ce répertoire contient votre clé publique, votre clé privée et un fichier known_hosts (après une première connexion). Votre configuration est également stockée ici.
+Lorsque vous installez SSH, un répertoire ~/.ssh est créé automatiquement. Ce répertoire contient votre clé publique, votre clé privée et un fichier known_hosts (après une première connexion). Votre configuration est également stockée ici.  
 Au moins sur Ubuntu, le fichier de configuration SSH n'est pas créé par défaut. Vous pouvez facilement créer ce fichier en utilisant la commande touch comme ceci :
 
 ```bash
-$touch ~/.ssh/config
+touch ~/.ssh/config
 ```
 
 
@@ -343,9 +355,9 @@ Vous pouvez également contrôler le nombre de fois qu'il envoie le message de v
 
 **5- Autoriser l'accès SSH à des utilisateurs sélectionnés uniquement**
 
-En matière de sécurité, vous devez suivre le principe du moindre privilège. Ne donnez pas de droits lorsque ce n'est pas nécessaire.
+En matière de sécurité, vous devez suivre le principe du moindre privilège. Ne donnez pas de droits lorsque ce n'est pas nécessaire.  
 Vous avez probablement plusieurs utilisateurs sur votre système Linux. Devez-vous autoriser l'accès SSH à chacun d'entre eux ? Peut-être pas.  
-Une approche dans ce cas serait d'autoriser l'accès SSH à quelques utilisateurs sélectionnés et de le restreindre pour tous les autres utilisateurs.
+Une approche dans ce cas serait d'autoriser l'accès SSH à quelques utilisateurs sélectionnés et de le restreindre pour tous les autres utilisateurs.  
 
 <code>AllowUsers User1 User2</code>
 
@@ -363,7 +375,7 @@ Fail2Ban vérifie les tentatives de connexion échouées à partir de différent
 
 Vous pouvez configurer tous ces paramètres en fonction de vos préférences et de vos besoins. Il y a un guide d'introduction détaillé sur l'utilisation de Fail2Ban que vous pouvez lire.
 
-https://linuxhandbook.com/fail2ban-basic/
+[https://linuxhandbook.com/fail2ban-basic/](https://linuxhandbook.com/fail2ban-basic/)
 
 **7- Désactiver la connexion SSH basée sur un mot de passe**
 
@@ -421,7 +433,7 @@ Pour faire passer la sécurité SSH au niveau supérieur, vous pouvez également
 
 Vous trouverez ici des informations sur la configuration de l'authentification à deux facteurs avec SSH.
 
-https://www.linode.com/docs/guides/use-one-time-passwords-for-two-factor-authentication-with-ssh-on-ubuntu-16-04-and-debian-8/
+[https://www.linode.com/docs/guides/use-one-time-passwords-for-two-factor-authentication-with-ssh-on-ubuntu-16-04-and-debian-8/](https://www.linode.com/docs/guides/use-one-time-passwords-for-two-factor-authentication-with-ssh-on-ubuntu-16-04-and-debian-8/)
 
 **9- Désactiver le transfert X11**
 
@@ -455,5 +467,5 @@ Je dois pouvoir voir la commande et le résultat de connexion sur votre serveur.
 
 ### Références
 
-Plusieurs parties de cet exercice proviennent du site Web https://linuxhandbook.com/
-https://www.ssh.com/academy/ssh/session-key
+Plusieurs parties de cet exercice proviennent du site Web [https://linuxhandbook.com/](https://linuxhandbook.com/)  
+[https://www.ssh.com/academy/ssh/session-key](https://www.ssh.com/academy/ssh/session-key)

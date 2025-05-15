@@ -12,12 +12,12 @@ Ce calendrier est donné à titre indicatif et peut être modifié en fonction d
 |3| 2 juin |Accès distant, les protocoles SSH/SCP et Git accès distant |[Ex4](Exercices/Exercice04_PriseEnMainSrv.md)|9 juin|
 |4| 3 juin |Admin système les droits et accès |Ex5|9 juin|
 |5|	 9 juin |Admin système Noyau, processus et logs |Ex6|16 juin|
-|6|	 16 juin |**Travail pratique 1 - Procédure d'installation d'un serveur** |**TP1**|23 juin|
+|6|	 16 juin |**TP 1 - Procédure d'installation d'un serveur** |**TP1**|23 juin|
 |7|	 18 juin |Docker	 |Ex7|30 juin|
 |8|	 23 juin |Docker file	 |Ex8 |30 juin|
 |9|	 30 juin <br> **Teams** |Docker Réseau et volume|Ex9 |7 juil.|
-|10| 3 juil. <br> **Teams** |**Travail pratique 2 - Docker** |**TP2**|8 juil.|
-|11| 7 juil. <br> **Teams** |**Travail pratique 2 - Docker** | ||
+|10| 3 juil. <br> **Teams** |**TP 2 - Docker** |**TP2**|8 juil.|
+|11| 7 juil. <br> **Teams** |**TP 2 - Docker** | ||
 |12| 8 juil. <br> **Teams** |Docker compose |Ex10|11 juil.|
 |13| 11 août <br> **Teams** |Présentation du service de résolution de nom DNS |Ex11|14 août|
 |14| 14 août <br> **Teams** |Révision	 |||
@@ -42,10 +42,10 @@ Ce calendrier est donné à titre indicatif et peut être modifié en fonction d
 
 |Évaluation | Pondération (en %) |
 |:-------------|:------:|
-|TP1 – Déploiement d’un système d’exploitation| 10|
+|TP1 – Procédure d'installation d'un serveur| 10|
 |TP2 – Docker	|10|
 |TP3 - Mise en place d’un service Web (Docker compose)| 10|
-|TP4 – Automatisation	| 10|
+|TP4 - Orchestration de conteneurs avec Ansible et Docker Compose| 10|
 |Examen partiel	| 20|
 |Évaluation finale à caractère synthèse	 |30|
 |Réalisation des exercices	|10|

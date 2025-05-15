@@ -48,7 +48,7 @@ b -	Une fois la VM créée, lancez la VM et installez le client Ubuntu selon les
     Optimisez votre ordinateur : ne rien choisir.  
     Application et mise à jour : Installation par défaut.  
     Configuration du disque : Fonctions avancées et utiliser LVM pour la nouvelle installation d'Ubuntu. Acceptez le partitionnement proposé, sélectionnez le premier disque et continuez.  
-    Utilisateur : à votre choix, sinon user01.  
+    Utilisateur : utiliser la première lettre de votre prénom suivi de votre nom. Par exemple, croy.  
  
 
 ## Partie 2 : Première utilisation de votre machine

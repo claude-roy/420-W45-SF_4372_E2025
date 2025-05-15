@@ -1,4 +1,4 @@
-# Erreurs et corrections  
+# Erreurs, corrections et informations   
 
 ### Désactiver la mise en veille d'Ubuntu 24.04 et plus  
 

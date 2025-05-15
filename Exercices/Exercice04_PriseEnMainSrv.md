@@ -23,7 +23,7 @@ Vous devez remettre un document Word contenant les vérifications demandées.
 
 ## Section 1 Prise en main de votre serveur
 
-Quand vous vous connectez à votre serveur, certaines [informations](../images/Connexion.png) importantes vous sont fournies. L'adresse IP est l'une des plus importante. Notez là.
+Quand vous vous connectez à votre serveur, certaines [informations](../images/Connexion.png) importantes vous sont fournies. L'adresse IP est l'une des plus importantes. Notez là.
 
 Lors de l'installation, vous avez coché oui à l'installation d'un serveur SSH.  
 
@@ -45,7 +45,7 @@ contient la clef privée et a les permissions 600. Le fichier ssh_host_rsa_key.p
 2. Le client génère une clef secrète et l’envoie au serveur, en chiffrant l’échange avec la clef publique du serveur (chiffrement asymétrique). Le serveur déchiffre cette clef secrète en utilisant sa clé privée, ce qui prouve qu’il est bien le vrai serveur.
 3. Pour le prouver au client, il chiffre un message standard avec la clef secrète et l’envoie au client. Si le client retrouve le message standard en utilisant la clef secrète, il a la preuve que le serveur est bien le vrai serveur. 
 4. Une fois la clef secrète échangée, le client et le serveur peuvent alors établir un canal sécurisé grâce à la clef secrète commune (chiffrement symétrique).
-5. Une fois que le canal sécurisé est en place, le client va pouvoir envoyer au serveur le login et le mot de passe de l’utilisateur pour vérification. La canal sécurisé reste en place jusqu’à ce que l’utilisateur se déconnecte.
+5. Une fois que le canal sécurisé est en place, le client va pouvoir envoyer au serveur le login et le mot de passe de l’utilisateur pour vérification. Le canal sécurisé reste en place jusqu’à ce que l’utilisateur se déconnecte.
 
 
 Il y a donc trois contraintes majeures pour garder un système sécurisé après avoir installé un serveur SSH :
@@ -74,7 +74,7 @@ ssh username@ip_serveur [-p port]
 
 Si le nom d'utilisateur est le même sur le serveur et sur le poste client, il peut être omis. Si le serveur utilise le port standard, 22, vous n'avez pas à spécifier le port.  
 
-- Dans un terminal sur le poste client utiliser la commande suivante pour vous connecter à votre serveur :  
+- Dans un terminal sur le poste client, utiliser la commande suivante pour vous connecter à votre serveur :  
 
 ```bash
 ssh username@ip_serveur
@@ -102,7 +102,7 @@ L’instruction **apt update** va rechercher les mises à jour disponibles pour 
 
 L’option **apt upgrade** installe les mises à jour identifiées avec apt update sans supprimer les paquets installés. S’il y a de nouvelles dépendances à installer, les paquets peuvent être installés ou non selon le type de commande utilisée apt, apt-get ou aptitude.
 
-L'options **full-upgrade**  agis plus « intelligemment » que la fonction upgrade. En plus de mettre à jour les paquets existants, elle va également être en mesure de gérer les dépendances. Si de nouveaux paquets doivent être installés pour satisfaire des dépendances, ils le seront. Ceux qui ne sont plus utiles, sont supprimés et les paquets essentiels ou requis, sont installés. Les paquets les plus importants sont traités en priorité.
+L'option **full-upgrade**  agit plus « intelligemment » que la fonction upgrade. En plus de mettre à jour les paquets existants, elle va également être en mesure de gérer les dépendances. Si de nouveaux paquets doivent être installés pour satisfaire des dépendances, ils le seront. Ceux qui ne sont plus utiles, sont supprimés et les paquets essentiels ou requis, sont installés. Les paquets les plus importants sont traités en priorité.
 
 **Dois-je utiliser apt upgrade ou apt full-upgrade?**
 
@@ -175,7 +175,7 @@ ls -l /home # Regarder votre utilisateur.
 
 Vous pouvez visualiser un exemple de résultats [ici](../images/droit.png).
 
-**Question** : Selon-vous, pourquoi seule root et le groupe shadow ont le droit lecture sur <code>/etc/shadow</code> et que tout le monde peut lire <code>/etc/passwd</code> ?
+**Question** : Selon-vous, pourquoi seul root et le groupe shadow ont le droit lecture sur <code>/etc/shadow</code> et que tout le monde peut lire <code>/etc/passwd</code> ?
 
 <details>
 	<summary markdown="span">Réponse :</summary>
@@ -207,8 +207,8 @@ Exemple de capture acceptable serveur:
 ## Utilisation de votre clé SSH sur GitHub
 
 
-- Connectez-vous votre station de travail Ubuntu.
-- Prenez la clé publique générée lors de l'exercice 1 et publiez-la sur votre compte GitHub. Bien sûr, si vous n'avez pas de compte créez-en un. Vous pouvez vous aider du livre Pro Git page 163. Ce livre est  disponible sur Léa.
+- Connectez-vous votre machine Ubuntu client (poste de développeur).
+- Si ce n'est pas encore fait, prenez la clé publique générée lors de l'exercice 1 et publiez-la sur votre compte GitHub. Bien sûr, si vous n'avez pas de compte, créez-en un. Vous pouvez vous aider du livre Pro Git page 163. Ce livre est  disponible sur Léa.
 - Rendez-vous sur mon dépôt à l'adresse [https://github.com/claude-roy/test_ste-foy](https://github.com/claude-roy/test_ste-foy)
 - Faite un Fork de mon dépôt. Voir dans le coin droit cet outil :
 ![fork](../images/fork.jpg)
@@ -216,6 +216,7 @@ Exemple de capture acceptable serveur:
 
 **Question**: Qu'est-ce qu'un "fork" en Git?
 <details>
+	<summary markdown="span">Réponse :</summary>
 
 > Les utilisateurs qui n’ont pas la permission de pousser sur un dépôt peuvent en faire un fork (créer leur propre copie), pousser des commits sur cette copie et ouvrir une requête de tirage (Pull Request) depuis leur fork vers le projet principal. Ce modèle permet au propriétaire de garder le contrôle total sur ce qui entre dans le dépôt et quand, tout en autorisant les contributions des utilisateurs non fiables.
 Source : Pro Git
@@ -229,13 +230,14 @@ Source : Pro Git
 - Pousser votre modification sur votre dépôt sur Git Hub avec la commande <code>git push</code>. Si vous avez bien inséré votre clé SSH sur GitHub, vous ne devriez pas avoir besoin de vous authentifier.
 - Sur votre page de GitHub, faites une demande de Pull Request pour que j'accepte de modifier le dépôt principal de votre contribution. Soyez gentil, écrivez un message avec votre demande.  Sinon, peut-être que je n’accepterais pas votre demande.;-)
 
-Pour vous aider : [https://git-scm.com/book/fr/v2/GitHub-Contribution-%C3%A0-un-projet]
+Pour vous aider : [https://git-scm.com/book/fr/v2/GitHub-Contribution-%C3%A0-un-projet](https://git-scm.com/book/fr/v2/GitHub-Contribution-%C3%A0-un-projet)
 
 Votre clé SSH pourra être utilisée toute la session entre votre poste client et votre compte GitHub.
 
 ### Création d'un fichier de configuration personnel pour SSH
 
 Lorsque vous installez SSH, un répertoire ~/.ssh est créé automatiquement. Ce répertoire contient votre clé publique, votre clé privée et un fichier known_hosts (après une première connexion). Votre configuration est également stockée ici.  
+
 Au moins sur Ubuntu, le fichier de configuration SSH n'est pas créé par défaut. Vous pouvez facilement créer ce fichier en utilisant la commande touch comme ceci :
 
 ```bash
@@ -251,7 +253,7 @@ Disons que vous vous connectez à un serveur dont l'IP est 10.100.2.50. Votre no
 
 Vous pouvez ajouter toutes ces informations de la manière suivante dans votre fichier `~/.ssh/config`.
 
->**[!Attention]** il s'agit d'un exemple. Si vous voulez le tester, utilisé votre nom d'Usager, l'adresse IP de votre serveur et le port 22 puisqu'il n'a pas été modifié. 
+>**[!Attention]** il s'agit d'un exemple. Pour votre configuration, utilisé votre nom d'utilisateur, l'adresse IP de votre serveur et si vous utiliser le port par défaut, 22, vous n'avez pas à utiliser la variable <code>port</code>. 
 
 ```bash
 Host website
@@ -260,7 +262,7 @@ Host website
         port 1500
 ```     
 
-- Il suffit de sauvegarder les informations dans le fichier. Il n'est pas nécessaire de redémarrer un service.
+- Il suffit de sauvegarder les informations dans le fichier. Il n'est pas nécessaire de redémarrer un service.  
 - Maintenant, au lieu d'écrire une longue commande comme celle-ci :
 
 ```bash
@@ -275,7 +277,7 @@ ssh website
 
 Vous ajoutez autant de Hosts que vous en avez besoin.
 
-Vous pouvez toujours vous référer à la page de manuel de <code>ssh_config</code>  (<code>man ssh\_config</code>)pour en savoir plus sur les paramètres que vous pouvez utiliser lors de la création de votre fichier de configuration SSH.
+Vous pouvez toujours vous référer à la page de manuel de <code>ssh_config</code>  (<code>man ssh\_config</code>) pour en savoir plus sur les paramètres que vous pouvez utiliser lors de la création de votre fichier de configuration SSH.
 
 ### Sécuriser l'accès SSH du serveur de test
 
@@ -286,7 +288,7 @@ Vous pouvez toujours vous référer à la page de manuel de <code>ssh_config</co
 
 Les fichiers de configuration de SSH sont situés dans <code>/etc/ssh/</code>. Comme tout fichier de configuration qu'on modifie, il est nécessaire de les sauvegarder avant de les modifier. 
 
-- Utilisez la technique suivante sur tous les fichiers de configuration que vous modifiez. Si j'aimais, il y a un problème, il est facile de revenir en arrière. De plus à la fin de la section je vous recommande de revenir au fichier initale.
+- Utilisez la technique suivante sur tous les fichiers de configuration que vous modifiez. Si j'aimais, il y a un problème ou vous ne voulez pas garder vos modifications, il est facile de revenir en arrière.
 
 ```bash
 sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.orig 
@@ -306,11 +308,13 @@ sudo vim /etc/ssh/sshd_config
 
 ### 10 Techniques pour sécuriser votre serveur SSH :
 
+**Attention :** les configurations en commentaire dans le fichier représentent les valeurs par défauts.
+
 **1- Désactiver les mots de passe vides :**
 
 Oui, il est possible d'avoir des comptes utilisateurs sous Linux sans aucun mot de passe. Si ces utilisateurs essaient d'utiliser SSH, ils n'auront pas besoin de mots de passe pour accéder au serveur via SSH également.
 
-C'est un risque pour la sécurité. Vous devriez interdire l'utilisation de mots de passe vides. Dans le fichier <code>/etc/ssh/sshd_config</code>, veillez vérifier que l'option <code>PermitEmptyPasswords</code> sur <code>no</code> (normalement, c'est l'option par défaut, donc commenté).
+C'est un risque pour la sécurité. Vous devriez interdire l'utilisation de mots de passe vides. Dans le fichier <code>/etc/ssh/sshd_config</code>, veillez à vérifier que l'option <code>PermitEmptyPasswords</code> sur <code>no</code> (normalement, c'est l'option par défaut, donc commenté).
 
 <code>PermitEmptyPasswords no</code>
 
@@ -339,6 +343,8 @@ Si vous avez ajouté des utilisateurs sudo sur votre système, vous devez utilis
 
 <code>PermitRootLogin no</code>
 
+**Note :** l'option <code>prohibit-password</code> signife s’authentifier avec tout mécanisme autorisé qui n’est ni un mot de passe ni l’interaction avec un clavier (keyboard-interactive). On peut garder cette option si l'on veut utiliser une connexion _root_ d'urgence.
+
 **4- Configurer le délai d'inactivité**
 
 L'intervalle de délai d'inactivité est la durée pendant laquelle une connexion SSH, sans activité, peut rester active sans vérification de l'autre extrémité (s'il y a toujours un système en connexion). Ces sessions ouvertes constituent également un risque pour la sécurité. C'est une bonne idée de configurer un délai de vérification.
@@ -351,7 +357,7 @@ Après cet intervalle, le serveur SSH enverra un message de vie au client. S'il 
 
 Vous pouvez également contrôler le nombre de fois qu'il envoie le message de vie avant de se déconnecter (la valeur par défaut est 3).
 
-<code>ClientAliveCountMax 2</code>
+<code>ClientAliveCountMax 3</code>
 
 **5- Autoriser l'accès SSH à des utilisateurs sélectionnés uniquement**
 
@@ -402,23 +408,24 @@ Avant de le faire, vous devez garder à l'esprit les points suivants :
 
 **Copier votre clé SSH sur votre serveur de test**
 
-- S'il n'existe pas, créer le dossier <code>.ssh</code> dans votre usager sur le serveur et créer le fichier <code>authorized_keys</code> dans le dossier
+- Avec l'utilisation de la commande <code>ssh-copy-id</code>, un fichier <code>~/.ssh/authorized_keys</code> sera créé s'il n'existe pas. Cependant, si vous n'utiliser pas la commande <code>ssh-copy-id</code> (comme sous Windows) et que le fichier n'existe pas, vous devez créer le dossier <code>.ssh</code> dans le dossier de votre utilisateur sur le serveur et créer le fichier <code>authorized_keys</code> dans le dossier.
 
-- Par la suite, sur votre client à l'aide de la commande <code>ssh-copy-id</code> (non disponible sous Windows) ou la commande <code>scp</code> copiez votre clé SSH sur votre serveur.
+- Pour copier la clé, à partir votre client, utiliser de la commande <code>ssh-copy-id</code> (non disponible sous Windows). Vous pouvez également utiliser la commande <code>scp</code> pour copiez votre clé SSH sur votre serveur, mais vous devrez ajouter manuellement la clé au fichier <code>~/.ssh/authorized_keys</code>.
 
 ```bash
 ssh-copy-id -i .ssh/id_ed25519 -p {port} {votreusager}@{adresse IP du serveur}
+# Si vous utilisez le port par défaut, 22, n'utilisez pas le paramètre -p.
 # Entrer le mot de passe de l'usager.
 ```
 
-- Vous pouvez par la suite vous connecter au serveur sans enter de mot de passe. 
+- Vous pouvez par la suite vous connecter au serveur sans entrer de mot de passe. 
 
-- Éditez le fichier /etc/ssh/sshd_config
+- Finalement, éditez le fichier /etc/ssh/sshd_config
     - Trouvez la ligne <code>PasswordAuthentication yes</code>
-    - Changer la pour <code>PasswordAuthentication no</code>
+    - Changez-la pour <code>PasswordAuthentication no</code>
     - S'il y a un # (signifie commenté) au début de cette ligne, supprimez-le.
     - Vérifier que <code>PubkeyAuthentication yes</code> n'a pas été changé.
-    - Si vous voulez utiliser un autre fichier que <code>.ssh/auhtorized_keys</code>, décomenter la ligne <code>AuthorizedKeysFile</code> et indiqué le nom de votre fichier.
+    - Si vous voulez utiliser un autre fichier que <code>.ssh/auhtorized_keys</code>, décommenter la ligne <code>AuthorizedKeysFile</code> et indiqué le nom de votre fichier.
  - Sauvegardez le fichier après avoir effectué ces modifications et redémarrez le service SSH.
 
 ```bash

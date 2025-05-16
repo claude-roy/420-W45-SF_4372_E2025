@@ -21,7 +21,6 @@ Dans cet exercice, vous allez vous installer un environnement de travail pour la
 ## Partie 1 : Installation d’Ubuntu 
 Dans cette partie, vous allez installer un serveur Ubuntu selon les spécifications données.  
 
-> **Attention :** vous pouvez installer vos VMs à la maison ou sur le vSphere du cégep. Par contre, je ne peux pas garantir que le vSphere sera toujours disponible cet automne.  
 
 ### Étape 1 : Installation  
 

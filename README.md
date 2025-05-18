@@ -11,7 +11,7 @@ Ce calendrier est donné à titre indicatif et peut être modifié en fonction d
 |2|	26 mai|Installation d'un serveur Linux avec LVM et configuration réseau	 |[Ex2](Exercices/Exercice02_InstallationServeur.md) et [Ex3](Exercices/Exercice03_GestionLVM.md)|2 juin|
 |3| 2 juin |Accès distant, les protocoles SSH/SCP |[Ex4](Exercices/Exercice04_PriseEnMainSrv.md)|9 juin|
 |4| 3 juin |Admin système les droits et accès |[Ex5](Exercices/Exercice05_AdminSysLinux.md)|9 juin|
-|5|	 9 juin |Admin système Noyau, processus et logs |Ex6|16 juin|
+|5|	 9 juin |Admin système Noyau, processus et logs |[Ex6](Exercices/Exercice06_InstallationEnvTest.md)|16 juin|
 |6|	 16 juin |**TP 1 - Procédure d'installation d'un serveur** |**TP1**|23 juin|
 |7|	 18 juin |Docker	 |Ex7|30 juin|
 |8|	 23 juin |Docker file	 |Ex8 |30 juin|

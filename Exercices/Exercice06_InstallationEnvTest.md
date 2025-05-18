@@ -326,7 +326,7 @@ phpinfo();
 ?>
 ```
 
-- Ouvrir ce fichier dans votre navigateur en tapant l'URL suivant (n'oubliez pas votre remise) :
+- Ouvrir ce fichier dans votre navigateur en entrant l'URL suivant (n'oubliez pas votre remise) :
 
 ***http://[adresse IP du serveur]/info.php***
 

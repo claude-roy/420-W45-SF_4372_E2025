@@ -511,12 +511,13 @@ ping -c 3 [nomVotreMachine] # C'est l'autre nom avec une adresse débutante par 
 
 sudo systemctl status systemd-resolved.service
 resolvectl status  
+# Prenez en note l'adresse du serveur DNS.
 ```
 
 - Vérifier si vous atteigniez les serveurs DNS :  
 
 ```bash
-ping -c 3 {Adresse IP DNS}
+ping -c 3 {Adresse IP du serveur DNS}
 ```
 
 - Ping sur le FQDN (Full qualified domain name) du cégep :  

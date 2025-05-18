@@ -332,8 +332,7 @@ phpinfo();
 
 [Image du navigateur](../images/info.png)
 
-- Un fichier info.php permet d'afficher les paramètres de PHP. Ces informations sont utiles si vous souhaitez vérifier votre configuration d’hébergement ou exécuter un logiciel qui nécessite des modules PHP spécifiques. 
-- 
+- Un fichier info.php permet d'afficher les paramètres de PHP. Ces informations sont utiles si vous souhaitez vérifier votre configuration d’hébergement ou exécuter un logiciel qui nécessite des modules PHP spécifiques.  
 - Après avoir vérifié l'information, dans un environnement de production vous devriez supprimer ce fichier.
 
 ### Finalisation

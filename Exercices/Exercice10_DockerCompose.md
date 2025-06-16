@@ -331,7 +331,7 @@ L’utilisation de plusieurs fichiers Compose vous permet de personnaliser une a
 
 1- Dans le dossier de votre projet, créez un fichier Compose appelé `infra.yaml`.  
 
-2. Coupez le service Redis de votre fichier `compose.yaml` et collez-le dans votre nouveau fichier `infra.yaml`. Assurez-vous d’ajouter l’attribut de niveau supérieur `services` en haut de votre fichier. Votre fichier `infra.yaml` devrait maintenant ressembler à ceci :
+2- Coupez le service Redis de votre fichier `compose.yaml` et collez-le dans votre nouveau fichier `infra.yaml`. Assurez-vous d’ajouter l’attribut de niveau supérieur `services` en haut de votre fichier. Votre fichier `infra.yaml` devrait maintenant ressembler à ceci :
 
 ```yaml
 services:

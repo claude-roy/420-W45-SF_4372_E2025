@@ -227,7 +227,7 @@ Ce fichier Compose définit deux services : `web` et `redis`.
 
 #### Service Web
 
-Le service `web` utilise une image créée à partir du `Dockerfile` dans le répertoire actuel. Il lie ensuite le conteneur et la machine hôte au port exposé, `5000`. Cet exemple de service utilise le port par défaut pour le serveur Web Flask, `5000`.
+Le service `web` utilise une image créée à partir du `Dockerfile` dans le répertoire actuel. Il lie ensuite le conteneur et la machine hôte au port exposé, `8000`. Cet exemple de service utilise le port par défaut pour le serveur Web Flask, `5000`.
 
 #### Service Redis
 

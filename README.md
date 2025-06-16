@@ -18,7 +18,7 @@ Ce calendrier est donné à titre indicatif et peut être modifié en fonction d
 |9|	 30 juin <br> **Teams** |Docker Réseau et volume|[Ex9](Exercices/Exercice09_DockerRzEtVolume.md) |7 juil.|
 |10| 3 juil. <br> **Teams** |**TP 2 - Docker** |**TP2**|8 juil.|
 |11| 7 juil. <br> **Teams** |**TP 2 - Docker** | ||
-|12| 8 juil. <br> **Teams** |Docker compose |Ex10|11 juil.|
+|12| 8 juil. <br> **Teams** |Docker compose |[Ex10](Exercices/Exercice10_DockerCompose.md)|11 juil.|
 |13| 11 août <br> **Teams** |Présentation du service de résolution de nom DNS |Ex11|14 août|
 |14| 14 août <br> **Teams** |Révision	 |||
 |15| 18 août |**Examen partiel** |**Examen 1**||

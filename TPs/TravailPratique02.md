@@ -120,7 +120,7 @@ Vous allez maintenant vous construire une image personnalisée pour « tester »
 Dans votre dépôt GitHub :  
 
 - Les fichiers `Dockerfile` tel que décrit ci-dessous.
-- Dans le fichier `README.md` du répertoire `mon_drupal`, vous devez inclure une image d'une capture d’écran démontrant votre drupal personnalisé. 
+- Dans le fichier `README.md` du répertoire `mon_drupal`, vous devez inclure une image d'une capture d’écran démontrant votre drupal avec le thème Bootstrap 3 d'installé. 
 
 ## Correction :
 

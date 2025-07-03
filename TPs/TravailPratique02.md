@@ -91,7 +91,7 @@ Vous allez maintenant vous construire une image personnalisée pour « tester »
 
 - Pour votre Dockerfile.
   
-  - Vous allez créer un fichier `Dockerfile` qui utilise l’image de drupal, <code>FROM drupal</code>.
+  - Vous allez créer un fichier `Dockerfile` qui utilise l’image de drupal 9, <code>FROM drupal:9</code>.
   - Vous devez exécuter (`RUN`) `apt` pour installer `git`, <code>apt update && apt install -y git</code>.
   - Vous devez faire un peu de nettoyage après l’installation avec la commande <code>rm -rf /var/lib/apt/lists/*</code>. Pour faire tout ça en une ligne de commande, vous devez utiliser `&&` et `\`. La première ligne a besoin d'un `\` à la fin pour signifier que la ligne suivante est incluse dans la commande, et au début de la ligne suivante, vous devriez avoir `&&` pour signifier “ si la première commande réussit, exécutez également cette commande ”. Vous pouvez consulter le [Dockerfile](https://github.com/docker-library/drupal/blob/23b02e8143858e0ed63e3f22bfa834f6d7263224/9.5/php8.1/apache-bullseye/Dockerfile) de l’image de `drupal:9` pour voir un exemple. (Dans le Dockerfile de Drupal 9, ils utilisent plus le `;`qui signifie "exécute la première commande, lorsqu'elle a terminé, exécute la suivante sans aucune vérification de réussite".)
   - Par la suite, vous allez changer de répertoire, <code>WORKDIR /var/www/html/themes</code>.

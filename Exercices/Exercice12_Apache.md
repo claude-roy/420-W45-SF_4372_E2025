@@ -198,7 +198,8 @@ apt update && apt install vim -y
 
 <details>
 <summary>Réponses :</summary>
-2.1 Donne le répertoire des fichiers de configuration.   
+
+2.1 Donne le répertoire des fichiers de configuration.    
 
 2.2 Définis le port l’adresse IP et/ou port.  
 

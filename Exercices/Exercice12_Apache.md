@@ -131,7 +131,7 @@ Allez sur le site de la documentation d’Apache, [https://httpd.apache.org/docs
 
 
 <details>
-<summary>Réponse.</summary>
+<summary>Réponses :</summary>
 
 1.	Quel fichier sur votre VM devez-vous modifier pour pouvoir résoudre un nom de domaine local (serveur qui n’a pas accès à Internet et n’est pas présent dans un DNS).
 ```/etc/hosts ou C:\Windows\system32\drivers\etc\hosts```  

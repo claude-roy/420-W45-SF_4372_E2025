@@ -198,10 +198,14 @@ apt update && apt install vim -y
 
 <details>
 <summary>Réponse.</summary>
-2.1 Donne le répertoire des fichiers de configuration.  
+2.1 Donne le répertoire des fichiers de configuration.   
+
 2.2 Définis le port l’adresse IP et/ou port.  
+
 2.3 www-data  
+
 2.4 Définis le nom et le port utilisés par le serveur pour s’identifier.  
+
 2.5 ```/usr/local/apache2/htdocs```  
 
 </details>  

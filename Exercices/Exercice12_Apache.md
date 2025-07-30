@@ -300,7 +300,7 @@ On voit l'information contenue dans le document index.html, on ne voit plus le l
 L'option -f fait que tail ne s'arrête pas lorsque la fin du fichier est atteinte, mais attend plutôt que des données supplémentaires soient ajoutées à l'entrée.
 </details>
 
-- Dans le fichier ```httpd.conf```,faite en sorte d'inclure le fichier de configuration des configurations par défauts (rechercher ```httpd-default.conf``` dans le fichier et le décommenter).
+- Dans le fichier ```httpd.conf```, faite en sorte d'inclure le fichier de configuration des configurations par défauts (rechercher ```httpd-default.conf``` dans le fichier et le décommenter).
    
 - Quittez le conteneur en tapant exit.
 

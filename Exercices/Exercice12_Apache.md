@@ -282,7 +282,7 @@ On voit l'information contenue dans le document index.html, on ne voit plus le l
 - Rechercher la ligne avec une directive pour les journaux d'accès : ```#CustomLog "logs/access_log" combined```.  
 - Ajouter la directive sur la ligne en dessous pour que nos journaux contiennent les traces des connexions :  
 
-		```CustomLog "logs/access_log" common```  
+```CustomLog "logs/access_log" common```  
 
 - Relancez le serveur httpd et consultez les fichiers de journaux avec la commande ```tail```. 
 

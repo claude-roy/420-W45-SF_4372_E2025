@@ -22,7 +22,7 @@ Ce calendrier est donné à titre indicatif et peut être modifié en fonction d
 |13| 11 août <br> **Teams** |Présentation du service de résolution de nom DNS |[Ex11](Exercices/Exercice11_DNS.md)|14 août|
 |14| 14 août <br> **Teams** |Révision	 |||
 |15| 18 août |**Examen partiel** |**Examen 1**||
-|16| 20 août |Apache, installation, config de base|Ex12|25 août|
+|16| 20 août |Apache, installation, config de base|[Ex12](Exercices/Exercice12_Apache.md)|25 août|
 |17| 25 août |Apache, modules et SSL	 |Ex13|3 sept.|
 |18| 27 août |Apache, installation d’un site Web et site virtuel|Ex14|3 sept.|
 |19| 3 sept. |Nginx, installation, config de base|Ex15|8 sept.|

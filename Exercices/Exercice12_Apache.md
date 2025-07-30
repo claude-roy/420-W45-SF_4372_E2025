@@ -197,7 +197,7 @@ apt update && apt install vim -y
  2.5 Quel est le répertoire pour les fichiers du site Web par défaut ?
 
 <details>
-<summary>Réponse.</summary>
+<summary>Réponses :</summary>
 2.1 Donne le répertoire des fichiers de configuration.   
 
 2.2 Définis le port l’adresse IP et/ou port.  

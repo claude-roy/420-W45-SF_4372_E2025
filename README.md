@@ -23,7 +23,7 @@ Ce calendrier est donné à titre indicatif et peut être modifié en fonction d
 |14| 14 août <br> **Teams** |Révision	 |||
 |15| 18 août |**Examen partiel** |**Examen 1**||
 |16| 20 août |Apache, installation, config de base|[Ex12](Exercices/Exercice12_Apache.md)|25 août|
-|17| 25 août |Apache, modules et SSL	 |Ex13|3 sept.|
+|17| 25 août |Apache, modules et SSL	 |[Ex13](Exercices/Exercice13_Apache_modules-SSL.md)|3 sept.|
 |18| 27 août |Apache, installation d’un site Web et site virtuel|Ex14|3 sept.|
 |19| 3 sept. |Nginx, installation, config de base|Ex15|8 sept.|
 |20| 4 sept. |Nginx, configurations avancées (reverse proxy et load balancer) |Ex16|8 sept.|  

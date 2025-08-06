@@ -30,7 +30,7 @@ Ce calendrier est donné à titre indicatif et peut être modifié en fonction d
 |21| 8 sept. |**TP3 - Mise en place d’un service Web (Docker Compose)**|**TP3**|15 sept.|
 |22| 10 sept. |**TP3 - Mise en place d’un service Web (Docker Compose)**|||
 |23| 15 sept. |**TP3 - Mise en place d’un service Web (Docker Compose)**|||
-|24| 17 sept. |Automatisation et Ansible|[Ex16](Exercices/Exercice17_AnsibleMiseEnPlace.md)|22 sept.|
+|24| 17 sept. |Automatisation et Ansible|[Ex17](Exercices/Exercice17_AnsibleMiseEnPlace.md)|22 sept.|
 |25| 22 sept. |Automatisation mode AdHoc|Ex18|29 sept.|
 |26| 24 sept. |Automatisation PlayBook	|Ex19|29 sept.|
 |27| 29 sept. |**TP4 - Orchestration de conteneurs avec Ansible et Docker Compose**|**TP4**|3 oct.|

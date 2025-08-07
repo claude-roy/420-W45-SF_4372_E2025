@@ -323,7 +323,7 @@ ansible -i hosts.yaml -m ping all
 Exemple de remise :  
 
 ![Exemple de remise.](../images/Exerc18.png)  
-**Figure 7 : exemple de remise.**  
+**Figure 6 : exemple de remise.**  
 
 ## Référence :  
 

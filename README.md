@@ -21,7 +21,7 @@ Ce calendrier est donné à titre indicatif et peut être modifié en fonction d
 |12| 8 juil. <br> **Teams** |Docker compose |[Ex10](Exercices/Exercice10_DockerCompose.md)|11 juil.|
 |13| 11 août <br> **Teams** |Présentation du service de résolution de nom DNS |[Ex11](Exercices/Exercice11_DNS.md)|14 août|
 |14| 14 août <br> **Teams** |Révision	 |||
-|15| 18 août |**Examen partiel** |**Examen 1**||
+|15| 15 août |**Examen partiel** |**Examen 1**||
 |16| 20 août |Apache, installation, config de base|[Ex12](Exercices/Exercice12_Apache.md)|25 août|
 |17| 25 août |Apache, modules et SSL	 |[Ex13](Exercices/Exercice13_Apache_modules-SSL.md)|3 sept.|
 |18| 27 août |Apache, installation d’un site Web et site virtuel|[Ex14](Exercices/Exercice14_Apache_SiteVirtuel.md)|3 sept.|

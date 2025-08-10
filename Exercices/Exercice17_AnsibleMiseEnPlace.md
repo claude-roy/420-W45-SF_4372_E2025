@@ -43,7 +43,7 @@ Même s’il est possible de passer par des mots de passe pour se connecter aux 
 
 Les connexions SSH se feront avec l’utilisateur *deploy*. Il faut donc créer cet utilisateur sur la station de gestion, créer sa clé ssh et installer la clé sur les noeuds que nous voulons gérer, dans notre cas ```srv-apache-[matricule]```.  
 
-C'est june bonne pratique d'utiliser un usager différent de votre usager de travail habituel. Ce nouvel usager doit pouvoir avoir les droits sudo pour exécuter les commandes sur la machine de contrôle, mais il devra également exister sur chacun des noeuds gérés.  
+C'est une bonne pratique d'utiliser un usager différent de votre usager de travail habituel. Ce nouvel usager doit pouvoir avoir les droits sudo pour exécuter les commandes sur la machine de contrôle, mais il devra également exister sur chacun des noeuds gérés.  
 
 ```bash
  sudo adduser deploy # Création rapide de l'usager.
@@ -355,9 +355,8 @@ ansible -m command -a id all
 
 Exemple de remise :
 
-![Exemple de remise.](../images/Exerc18.png)  
-**Figure 7 : exemple de remise.**
-
+![Exemple de remise.](../images/Exerc17.png)  
+**Figure 7 : exemple de remise.**  
 
 ## Référence :
 

@@ -177,10 +177,6 @@ On va ajouter le module manquant, Docker et en même temps Docker Compose, direc
 - name: "Apache installation avec Docker"
   hosts: prod
   pre_tasks:
-    - name: UPDATE APT CACHE
-      apt:
-        update_cache: yes
-
     - name: INSTALL DEPENDANCES DOCKER
       apt:
         name:
@@ -189,44 +185,54 @@ On va ajouter le module manquant, Docker et en même temps Docker Compose, direc
           - curl
           - software-properties-common
         state: present
+        update_cache: yes
+      tags: docker
 
     - name: AJOUT CLE GPG DE DOCKER
       apt_key:
         url: https://download.docker.com/linux/ubuntu/gpg
         state: present
+      tags: docker
 
     - name: AJOUT DEPOT APT DE DOCKER
       apt_repository:
         repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu jammy stable
         state: present
+      tags: docker
 
+  tasks:
     - name: INSTALL DOCKER
       apt:
         name: docker-ce
         state: present
         update_cache: yes
+      tags: docker
 
     - name: INSTALL DOCKER COMPOSE
       shell: curl -fsSL https://github.com/docker/compose/releases/latest/download/docker-compose-Linux-x86_64 -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
+      tags: docker
 
     - name: DEMARRE DOCKER
       ansible.builtin.systemd_service:
         state: started
         name: docker
+      tags: docker
 
-  tasks:
     - name : Create Apache container
       community.docker.docker_container:
         name: webapp
         image: httpd
         ports:
             - "80:80"
+      tags: apache
 ```  
 
-Exécution du playbook.  
+Nous avons ajouté des *tags* pour différencier l'installation de Docker et le lancement du conteneur.  
+
+Exécution du playbook avec le *tag* docker.  
 
 ```bash
-ansible-playbook deploy.yaml
+ansible-playbook deploy.yaml --tags docker
 ```
 
 Nouvelle erreur: <code>Permision  denied</code>
@@ -240,10 +246,6 @@ Nous n'avons pas les droits. Le compte *deploy* n'est pas suffisant. Il faut une
   hosts: prod
   become: true  
   pre_tasks:
-    - name: UPDATE APT CACHE
-      apt:
-        update_cache: yes
-
     - name: INSTALL DEPENDANCES DOCKER
       apt:
         name:
@@ -252,44 +254,52 @@ Nous n'avons pas les droits. Le compte *deploy* n'est pas suffisant. Il faut une
           - curl
           - software-properties-common
         state: present
+        update_cache: yes
+      tags: docker
 
     - name: AJOUT CLE GPG DE DOCKER
       apt_key:
         url: https://download.docker.com/linux/ubuntu/gpg
         state: present
+      tags: docker
 
     - name: AJOUT DEPOT APT DE DOCKER
       apt_repository:
         repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu jammy stable
         state: present
+      tags: docker
 
+  tasks:
     - name: INSTALL DOCKER
       apt:
         name: docker-ce
         state: present
         update_cache: yes
+      tags: docker
 
     - name: INSTALL DOCKER COMPOSE
       shell: curl -fsSL https://github.com/docker/compose/releases/latest/download/docker-compose-Linux-x86_64 -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
+      tags: docker
 
     - name: DEMARRE DOCKER
       ansible.builtin.systemd_service:
         state: started
         name: docker
+      tags: docker
 
-  tasks:
     - name : Create Apache container
       community.docker.docker_container:
         name: webapp
         image: httpd
         ports:
             - "80:80"
+      tags: apache
 ```  
 
 Exécution de playbook.  
 
 ```bash
-ansible-playbook deploy.yaml
+ansible-playbook deploy.yaml --tags docker
 ```  
 
 Cette fois, "sudo: il est nécessaire de saisir un mot de passe".  
@@ -304,10 +314,6 @@ Nous allons y aller pour la façon la plus  simple bien sure, la moins sécurita
   vars:
     ansible_sudo_pass: MotDePasse # Mettre votre mot de passe de deploy
   pre_tasks:
-    - name: UPDATE APT CACHE
-      apt:
-        update_cache: yes
-
     - name: INSTALL DEPENDANCES DOCKER
       apt:
         name:
@@ -316,59 +322,79 @@ Nous allons y aller pour la façon la plus  simple bien sure, la moins sécurita
           - curl
           - software-properties-common
         state: present
+        update_cache: yes
+      tags: docker
 
     - name: AJOUT CLE GPG DE DOCKER
       apt_key:
         url: https://download.docker.com/linux/ubuntu/gpg
         state: present
+      tags: docker
 
     - name: AJOUT DEPOT APT DE DOCKER
       apt_repository:
         repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu jammy stable
         state: present
+      tags: docker
 
+  tasks:
     - name: INSTALL DOCKER
       apt:
         name: docker-ce
         state: present
+        update_cache: yes
+      tags: docker
 
     - name: INSTALL DOCKER COMPOSE
       shell: curl -fsSL https://github.com/docker/compose/releases/latest/download/docker-compose-Linux-x86_64 -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
+      tags: docker
 
     - name: DEMARRE DOCKER
       ansible.builtin.systemd_service:
         state: started
         name: docker
+      tags: docker
 
-  tasks:
     - name : Create Apache container
       community.docker.docker_container:
         name: webapp
         image: httpd
         ports:
             - "80:80"
+      tags: apache
 ```  
 
 Exécution de playbook.  
 
 ```bash
-ansible-playbook deploy.yaml
+ansible-playbook deploy.yaml --tags docker
 ```  
 
 Résultat attendu :  
 
-![Le playbook fonctionne.](../images/fonctionne.png)  
+![Le playbook fonctionne.](../images/dockerInstallation.png)  
 **Figure 2 : le playbook fonctionne.**  
+
+Exécution de playbook pour le lancement du conteneur.  
+
+```bash
+ansible-playbook deploy.yaml --tags apache
+```  
+
+Résultat attendu :  
+
+![Le lancement du conteneur.](../images/apacheConteneur.png)  
+**Figure 3 : le lancement du conteneur.**  
 
 Vérifions dans le navigateur :  
 
 ![La page est là!](../images/ItWork.jpg)  
-**Figure 3 : la page est là!**  
+**Figure 4 : la page est là!**  
 
 Et aussi sur la machine srv-apache-1 :   
 
 ![La commande docker ps.](../images/dockerps.jpg)  
-**Figure 4 : la commande docker ps.**  
+**Figure 5 : la commande docker ps.**  
 
 ### 7- Sortir le mot de passe du playbook  
 
@@ -422,7 +448,7 @@ ansible_sudo_pass: votreMotDePasse
 Exécution du playbook.  
 
 ```bash
-ansible-playbook deploy.yaml
+ansible-playbook deploy.yaml --tags docker
 ```  
 
 Jusqu'à maintenant, nous avons toujours le mot de passe dans un fichier texte. Donc, nous avons un problème de sécurité.  
@@ -499,10 +525,6 @@ Modifiez le fichier <code>deploy.yaml</code> pour ajouter le fichier contenant l
   vars_files:
     - ./vars/secret-variables.yaml
   pre_tasks:
-    - name: UPDATE APT CACHE
-      apt:
-        update_cache: yes
-
     - name: INSTALL DEPENDANCES DOCKER
       apt:
         name:
@@ -511,50 +533,58 @@ Modifiez le fichier <code>deploy.yaml</code> pour ajouter le fichier contenant l
           - curl
           - software-properties-common
         state: present
+        update_cache: yes
+      tags: docker
 
     - name: AJOUT CLE GPG DE DOCKER
       apt_key:
         url: https://download.docker.com/linux/ubuntu/gpg
         state: present
+      tags: docker
 
     - name: AJOUT DEPOT APT DE DOCKER
       apt_repository:
         repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu jammy stable
         state: present
+      tags: docker
 
+  tasks:
     - name: INSTALL DOCKER
       apt:
         name: docker-ce
         state: present
         update_cache: yes
+      tags: docker
 
     - name: INSTALL DOCKER COMPOSE
       shell: curl -fsSL https://github.com/docker/compose/releases/latest/download/docker-compose-Linux-x86_64 -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
+      tags: docker
 
     - name: DEMARRE DOCKER
       ansible.builtin.systemd_service:
         state: started
         name: docker
+      tags: docker
 
-  tasks:
     - name : Create Apache container
       community.docker.docker_container:
         name: webapp
         image: httpd
         ports:
             - "80:80"
+      tags: apache
 ```  
 
 Maintenant, on doit ajouter le paramètre <code>--ask-vault-pass</code> au lancement de notre playbook :  
 
 ```bash
-ansible-playbook deploy.yaml --ask-vault-pass
+ansible-playbook deploy.yaml --ask-vault-pass --tags docker
 ```  
 
 Le mot de passe pour ouvrir le fichier <code>secret-variables.yaml</code> est demandé.  
 
 ![L'exécution avec Vault.](../images/Vault.png)  
-**Figure 5 : l'exécution avec Vault.**  
+**Figure 6 : l'exécution avec Vault.**  
 
 Maintenant, faites un _commit_ (ne pas oublier d'ajouter les nouveaux fichiers) de votre projet et _poussez_ votre projet dans votre dépôt github.  
 
@@ -587,7 +617,7 @@ ansible-playbook deploy.yaml --ask-vaut-pass
 Exemple de remise :  
 
 ![Exemple de remise.](../images/Exerc19.png)  
-**Figure 6 : exemple de remise.**  
+**Figure 7 : exemple de remise.**  
 
 ## Références  
 [Documentation Ansible pour ```group_vars```](https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html#organizing-host-and-group-variables)  

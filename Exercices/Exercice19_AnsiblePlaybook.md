@@ -208,10 +208,6 @@ On va ajouter le module manquant, Docker et en même temps Docker Compose, direc
         update_cache: yes
       tags: docker
 
-    - name: INSTALL DOCKER COMPOSE
-      shell: curl -fsSL https://github.com/docker/compose/releases/latest/download/docker-compose-Linux-x86_64 -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
-      tags: docker
-
     - name: DEMARRE DOCKER
       ansible.builtin.systemd_service:
         state: started
@@ -277,10 +273,6 @@ Nous n'avons pas les droits. Le compte *deploy* n'est pas suffisant. Il faut une
         update_cache: yes
       tags: docker
 
-    - name: INSTALL DOCKER COMPOSE
-      shell: curl -fsSL https://github.com/docker/compose/releases/latest/download/docker-compose-Linux-x86_64 -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
-      tags: docker
-
     - name: DEMARRE DOCKER
       ansible.builtin.systemd_service:
         state: started
@@ -343,10 +335,6 @@ Nous allons y aller pour la façon la plus  simple bien sure, la moins sécurita
         name: docker-ce
         state: present
         update_cache: yes
-      tags: docker
-
-    - name: INSTALL DOCKER COMPOSE
-      shell: curl -fsSL https://github.com/docker/compose/releases/latest/download/docker-compose-Linux-x86_64 -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
       tags: docker
 
     - name: DEMARRE DOCKER
@@ -554,10 +542,6 @@ Modifiez le fichier <code>deploy.yaml</code> pour ajouter le fichier contenant l
         name: docker-ce
         state: present
         update_cache: yes
-      tags: docker
-
-    - name: INSTALL DOCKER COMPOSE
-      shell: curl -fsSL https://github.com/docker/compose/releases/latest/download/docker-compose-Linux-x86_64 -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
       tags: docker
 
     - name: DEMARRE DOCKER

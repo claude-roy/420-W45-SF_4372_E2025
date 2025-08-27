@@ -139,7 +139,7 @@ Traduit avec www.DeepL.com/Translator (version gratuite)***
 - Arrêter vos conteneurs.  
 
   ```bash
-  docker-compose down
+  docker compose down
   ```
 
 ## Section 2 : Site Web virtuel
@@ -177,7 +177,7 @@ Voici à quoi devrait ressembler votre fichier.
 ![Exemple du fichier /etc/hosts.](../images/fichierHosts.png)  
 **Figure 1 : exemple du fichier /etc/hosts.**  
 
--	Lancer votre système avec ```docker-compose up```.  
+-	Lancer votre système avec ```docker compose up -d```.  
 
 - Vérifier que ça fonctionne avec Firefox (si vous avez un problème d’atteindre [www.site01.com](http://www.site01.com), vous pouvez relancer votre système pour le forcer à lire le fichier hosts).  
 
@@ -191,7 +191,7 @@ $ docker container cp vsites-apache-1:/usr/local/apache2/conf/httpd.conf conf/
 -	Arrêter votre système.  
 
 ```bash
-docker-compose down
+docker compose down
 ```  
 
 Nous devons d'abord modifier le fichier ```vSites/conf/httpd.conf``` pour pouvoir inclure le fichier ```httpd-vhosts.conf```.

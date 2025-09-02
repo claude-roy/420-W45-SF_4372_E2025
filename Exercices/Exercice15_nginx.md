@@ -15,7 +15,7 @@
 Dans cet exercice, vous allez installer un environnement de serveur Web (HTTP) nginx, regarder à sa configuration de base et configurer des hôtes virtuels.
 
 ## Section 1 : Installation de nginx  
-Dans cette partie, vous allez installer le serveur Web Apache selon les spécifications données.  
+Dans cette partie, vous allez installer le serveur Web Nginx selon les spécifications données.  
 
 ### Étape 1 : Installation  
 
@@ -140,7 +140,7 @@ Votre structure de répertoire devrait ressembler à ça :
                   |--site02/
                     |--html/
                       |--index.html
-```  
+```    
 
 - Créer les fichiers nécessaires dans SitesNginx pour créer une image et un conteneur avec les spécifications suivantes (vos fichiers ```index.html``` doivent indiquer le nom du site et que le serveur est nginx) :  
 

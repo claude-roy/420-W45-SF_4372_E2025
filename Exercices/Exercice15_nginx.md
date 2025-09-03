@@ -131,7 +131,7 @@ Votre structure de répertoire devrait ressembler à ça :
                   |--compose.yaml
                   |--Dockerfile
                   |--conf/
-                      |--ngnix.conf
+                      |--nginx.conf
                       |--default.conf
                       |--site02.conf
                   |--site01/

@@ -27,7 +27,7 @@ Ce calendrier est donné à titre indicatif et peut être modifié en fonction d
 |18| 27 août |Apache, installation d’un site Web et site virtuel|[Ex14](Exercices/Exercice14_Apache_SiteVirtuel.md)|3 sept.|
 |19| 3 sept. |Nginx, installation, config de base|[Ex15](Exercices/Exercice15_nginx.md)|8 sept.|
 |20| 4 sept. |Nginx, configurations avancées (reverse proxy et load balancer) |[Ex16](Exercices/Exercice16_nginx_LB.md)|8 sept.|  
-|21| 8 sept. |**TP3 - Mise en place d’un service Web (Docker Compose)**|**TP3**|15 sept.|
+|21| 8 sept. |**TP3 - Mise en place d’un service Web (Docker Compose)**|**[TP3](TPs/TravailPratique03.md)**|15 sept.|
 |22| 10 sept. |**TP3 - Mise en place d’un service Web (Docker Compose)**|||
 |23| 15 sept. |**TP3 - Mise en place d’un service Web (Docker Compose)**|||
 |24| 17 sept. |Automatisation et Ansible|[Ex17](Exercices/Exercice17_AnsibleMiseEnPlace.md)|22 sept.|

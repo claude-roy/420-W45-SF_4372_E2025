@@ -459,7 +459,7 @@ become_ask_pass=true
 Exécution du playbook.  
 
 ```bash
-ansible-playbook deploy.yaml
+ansible-playbook deploy.yaml --tags docker
 ```  
 
 Le mot de passe est demandé.  
@@ -613,7 +613,7 @@ Vous devez fournir (déposé sur GitHub) :
 ```bash
 cat hosts.yaml
 cat deploy.yaml
-ansible-playbook deploy.yaml --ask-vaut-pass
+ansible-playbook deploy.yaml --ask-vaut-pass --tags docker
 ```  
 
 ## Évaluation :  

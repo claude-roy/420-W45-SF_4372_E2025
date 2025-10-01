@@ -35,7 +35,7 @@ Ce calendrier est donné à titre indicatif et peut être modifié en fonction d
 |26| 24 sept. |Automatisation mode AdHoc|[Ex18](Exercices/Exercice18_AnsibleModeAdHoc.md)|1 oct.|
 |27| 29 sept. |Automatisation PlayBook<br>**TP4 - Ansible**|[TP4](TPs/TravailPratique04.md)|6 oct.|
 |28| 1 oct. |**TP4 - Ansible**|||
-|29| 6 oct. |**Évaluation finale à caractère synthèse**|**EFCS**|7 oct.|
+|29| 6 oct. |**Évaluation finale à caractère synthèse**|[EFCS](TPs/EFCS.md)|7 oct.|
 |30| 7 oct. |**Évaluation finale à caractère synthèse**|||
 
 ### Récapitulatif de la pondération des évaluations sommatives
